@@ -9,46 +9,51 @@ body, .chat-room, .chat-line__moderation, .chat-line__status, .chat-line__messag
 	font-size: 16px!important;
 	background-color: rgba(0,0,0,0)!important;
 	line-height:1.8;
-    letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 }
 
-.chat-line__no-background{
+.chat-line__no-background {
     position: relative;
 }
 
-.chat-line-message-body {
-    position: relative;
+
+.text-fragment {
+  display: block;
+  width: 100%; /* 必要に応じて値を調整してください */
+  max-width: fit-content;
+  min-width: 190px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px #a5636329;
+  border: 3px solid #a37d82;
+  border-radius: 20px;
+  padding: 10px;
+  padding-inline: 20px;
+  z-index: 1;
+  color: #895454;
+  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+
+.chat-line__username-container {
+  width: fit-content;
+  max-width: 350px;
 }
 
 .chat-author__display-name {
-    position: relative;
-    display: inline-block;
-    background-color: #A37D82;
-    border-radius: 30px;
-    padding: 10px 30px;
-    width: fit-content;
-    max-width: 350px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #ffffff;
-    top: 20px;
-    left: 20px;
-    z-index: 2;
-}
-
-.text-fragment {
-    display: inline-block;
-    width: 100%;
-    max-width: 400px;
-    background-color: #ffffff;
-    box-shadow: 0px 2px 10px #A5636329;
-    border: 3px solid #A37D82;
-    border-radius: 20px;
-    padding: 10px;
-    z-index: 1;
-    color: #895454;
-    animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  position: relative;
+  background-color: #a37d82 !important;
+  border-radius: 30px;
+  padding: 10px 30px;
+  width: fit-content;
+  min-width: 150px;
+  max-width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffffff !important;
+  top: 10px;
+  left: 20px;
+  z-index: 2;
+  animation: zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
 }
 
 @keyframes zoomIn {
@@ -62,8 +67,16 @@ body, .chat-room, .chat-line__moderation, .chat-line__status, .chat-line__messag
     }
   }
 
-.chat-line__username-container span:first-child {
-	display: none !important;
+span.text-fragment.fit-width {
+    width: fit-content;
+}
+
+span.text-fragment.fit-width {
+  width: 100%;
+}
+
+.hDgGYp {
+  display: none !important;
 }
 
 span[aria-hidden="true"] {
@@ -71,7 +84,7 @@ span[aria-hidden="true"] {
 }
 
 .chat-line__timestamp {
-    display: none;
+    display: none !important;
 }
 
 
